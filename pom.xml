@@ -43,6 +43,7 @@
 
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
     <dependency>
+<!--      используется для автоматический конвертации в/на формат json-->
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.13.0</version>
@@ -75,7 +76,6 @@
       <artifactId>spring-orm</artifactId>
       <version>5.3.10</version>
     </dependency>
-
 
   </dependencies>
 
