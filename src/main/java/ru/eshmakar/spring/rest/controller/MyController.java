@@ -37,4 +37,10 @@ public class MyController {
         employeeService.saveEmployee(employee);
         return employee;
     }
+
+    @PutMapping("/employees")//эта аннотация используется для изменения данных
+    public Employee updateEmployee(@RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
 }
