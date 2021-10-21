@@ -43,4 +43,16 @@ public class MyController {
         employeeService.saveEmployee(employee);
         return employee;
     }
+
+
+    @DeleteMapping("/employees/{id}")//используем для удаления работника
+    public String deleteEmployee(@PathVariable int id){//получаем id с юзера
+        Employee employee = employeeService.getEmployee(id);
+        if (employee==null)//если такого работника нет в базе
+            throw new NoSuchEmployeeException("There is not employee with id " + id); //выбрасываем это исключение
+
+        employeeService.deleteEmployee(id);//если есть такой работник, то удаляем из базы
+        return "The employee with id " + id +" was deleted!";//возвращаем json
+
+    }
 }
