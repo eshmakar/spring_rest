@@ -32,5 +32,9 @@ public class MyController {
         return employee;
     }
 
-
+    @PostMapping("/employees")//добавляем работника методом POST
+    public Employee addEmployee(@RequestBody Employee employee){//заполненяем данные работника с помощью Postman в формате json
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
 }
