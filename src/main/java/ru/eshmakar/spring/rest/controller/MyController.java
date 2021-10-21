@@ -33,11 +33,4 @@ public class MyController {
     }
 
 
-    @ExceptionHandler//аннотация для выбрасывания своих исключении
-    public ResponseEntity<EmployeeIncorrectData> exceptionHandling(NoSuchEmployeeException exception){  //ResponseEntity - используется для добавления состояния HttpStatus
-        EmployeeIncorrectData incorrectData = new EmployeeIncorrectData();  //создаем объект нашего класса
-        incorrectData.setInfo(exception.getMessage());  //добавляем сообщение о том, что такого работника нет
-        return new ResponseEntity<>(incorrectData, HttpStatus.BAD_REQUEST); //возвращаем сообщение в формате json со статусом BAD_REQUEST
-    }
-
 }
